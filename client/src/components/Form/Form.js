@@ -65,7 +65,8 @@ function Form() {
                     label="Message" 
                     fullWidth 
                     multiline 
-                    rows={4} value={postData.message} 
+                    rows={4} 
+                    value={postData.message} 
                     onChange={(e) => setPostData({ ...postData, message: e.target.value })} 
                 />
                 <TextField 
@@ -76,12 +77,12 @@ function Form() {
                     value={postData.tags} 
                     onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} 
                 />
-                <div 
-                    className={classes.fileInput}><FileBase 
-                    type="file" 
-                    multiple={false} 
-                    onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} 
-                />
+                <div className={classes.fileInput}>
+                    <FileBase 
+                        type="file" 
+                        multiple={false} 
+                        onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} 
+                    />
                 </div>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth >
                     Submit
