@@ -10,6 +10,7 @@ import { getPosts } from './redux/post/post.actions';
 
 function App() {
   const currentId = useSelector(state => state.id);
+
   const classes = useStyles();
   const dispatch = useDispatch();
 
