@@ -8,13 +8,14 @@ import { getPosts } from '../../redux/post/post.actions';
 
 function Home() {
     const currentId = useSelector(state => state.id);
+    const posts = useSelector((state) => state.posts);
     const dispatch = useDispatch();
 
     console.log(currentId);
 
     useEffect(() => {
         dispatch(getPosts());
-    }, [currentId, dispatch])
+    }, [posts.length, currentId, dispatch])
 
     return (
         <Grow in>

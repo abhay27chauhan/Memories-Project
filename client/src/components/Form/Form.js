@@ -38,6 +38,16 @@ function Form() {
         }
     };
 
+    if (!user?.result?.name) {
+        return (
+            <Paper className={classes.paper}>
+                <Typography variant="h6" align="center">
+                Please Sign In to create your own memories and like other's memories.
+                </Typography>
+            </Paper>
+        );
+    }
+
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
